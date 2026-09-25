@@ -35,3 +35,10 @@ for a 64-bit value.
 `decode` expects a bytes object containing exactly one varint and will raise
 `ValueError` if trailing bytes are present.  Use `decode_stream` when reading
 from a buffer that contains additional data after the varint.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
