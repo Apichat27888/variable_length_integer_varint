@@ -1,6 +1,6 @@
 [project]
 name = "variable-length-integer-varint"
-version = "0.1.0"
+version = "0.1.1"
 description = "Encodes and decodes integers using protobuf-style variable-length encoding, returning byte objects and consuming from arbitrary byte streams."
 requires-python = ">=3.10"
 dependencies = []
